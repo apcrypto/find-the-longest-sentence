@@ -6,13 +6,19 @@
   </head>
   <body>
     <script>
-      let S = "This is a sentence. This is an even longer sentence. This is the longest sentence of all";
-      const result = S.split(".")
-      .map(sentence => sentence.split(" ")
-      .filter(word => word !== "")
-      .length
-      );
-      console.log(Math.max(...result));
+
+      const S = "This is a sentence. This is an even longer sentence. This is the longest sentence of all the sentences";
+
+        const result = S.split(".") // splits string at .
+        .map(sentence => sentence.split(" ") // builds copy and splits by white space
+        .filter(word => word !== "") // removes non-words so they're not counted
+        .length // number of words in each sentence
+        );
+
+      console.log(typeof S)
+      console.log(typeof result)
+      console.log(Math.max(...result)); // console logs largest number. Spread operator required because 'result' is NaN it's an object
+
     </script>
   </body>
 </html>
